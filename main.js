@@ -30,19 +30,25 @@ $('#light-theme-button').addEventListener('click', () => {
     document.body.classList.remove('dark-theme')
 })
 
+//  IMAGE URL
+
+// $('#url-img-input').addEventListener('keyup', () => {
+//     $('#img-meme').style.backgroundImage = `url${('#url-img-input').target.value}`
+// })  
+
 // TEXT INPUT //
 
-$('#top-text-input').addEventListener ('keyup', () => {
+$('#top-text-input').addEventListener('keyup', () => {
     $('#top-text').innerText = $('#top-text-input').value;
 })
 
-$('#bottom-text-input').addEventListener ('keyup', () => {
+$('#bottom-text-input').addEventListener('keyup', () => {
     $('#bottom-text').innerText = $('#bottom-text-input').value;
 })
 
 // IMG URL //
 
-$('#url-img-input').addEventListener ('keyup', () => {
+$('#url-img-input').addEventListener('keyup', () => {
     $('#img-meme').style.backgroundImage = $('url-img-input').value;
     $('#img-meme').style.backgroundPosition = 'center';
 });
@@ -63,6 +69,13 @@ $('#no-bottom-text-checkbox').addEventListener('change', () => {
         $('#bottom-text').classList.remove('hidden')
 }})
 
+// FONT FAMILY
+
+$('#text-font-select').addEventListener('change', () => {
+    $('#top-text').style.fontFamily =  $('#text-font-select').value;
+    $('#bottom-text').style.fontFamily = $('#text-font-select').value;
+})
+
 // TEXT RESIZE
 
 $('#text-size-input').addEventListener('input', () => {
@@ -72,17 +85,17 @@ $('#text-size-input').addEventListener('input', () => {
 
 //  TEXT ALIGN
 
-$('#button-text-align-left').addEventListener ('click', () => {
+$('#button-text-align-left').addEventListener('click', () => {
     $('#top-text').style.textAlign = 'left'
     $('#bottom-text').style.textAlign = 'left'
 })
 
-$('#button-text-align-center').addEventListener ('click', () => {
+$('#button-text-align-center').addEventListener('click', () => {
     $('#top-text').style.textAlign = 'center'
     $('#bottom-text').style.textAlign = 'center'
 })
 
-$('#button-text-align-right').addEventListener ('click', () => {
+$('#button-text-align-right').addEventListener('click', () => {
     $('#top-text').style.textAlign = 'right'
     $('#bottom-text').style.textAlign = 'right'
 })
@@ -96,50 +109,39 @@ $('#text-color-input').addEventListener('input', () => {
     $('#top-text').style.color = color;
     $('#bottom-text').style.color = color;
 })
-  
-// DOWNLOAD BUTTON 
 
-$('#download-meme-button').addEventListener('click', () => {
-    domtoimage.toBlob(document.getElementById('canvas-meme'))
-    .then(function (blob) {
-        window.saveAs(blob, 'meme.png')})
+// TEXT BACKGROUND COLOR
+
+$('#text-background-color-input').addEventListener('input', () => {
+    const color = $('#text-background-color-input').value.toUpperCase();
+
+    $('#text-background-color').innerText = color;
+    $('#top-text').style.backgroundColor = color;
+    $('#bottom-text').style.backgroundColor = color;
 })
 
+// NO BACKGROUND COLOR CHECKBOX
 
-// DEPENDENCIAS EN README
+$('#no-background-text-checkbox').addEventListener('change', () => {
+    if ($('#no-background-text-checkbox').checked) {
+        $('#top-text').style.backgroundColor = 'transparent'
+        $('#bottom-text').style.backgroundColor = 'transparent'
+} else {
+    $('#top-text').style.backgroundColor = $('#text-background-color-input').value.toUpperCase()
+    $('#bottom-text').style.backgroundColor = $('#text-background-color-input').value.toUpperCase()
+}})
 
 
+// LETTER SPACING
 
+$('#letter-spacing-input').addEventListener('change', () => {
+    $('#top-text').style.letterSpacing = `${$('#letter-spacing-input').value}px`;
+    $('#bottom-text').style.letterSpacing = `${$('#letter-spacing-input').value}px`;
+})
 
-// $('#text-background-color-input').addEventListener('input', () => {
-//     if ($('#text-no-background-checkbox').checked) {
-//     const color = $('#text-background-color-input').value
-      
-//     $('#text-background-color').innerText = color.toUpperCase()
-//     $('#top-text').style.backgroundColor = color
-//     $('#bottom-text').style.backgroundColor = color
-// } else {
-//     $('#top-text').style.backgroundColor = 'transparent'
-//     $('#bottom-text').style.backgroundColor = 'transparent'
-// }})
+// LINE HEIGHT
 
-// noFontBackground.addEventListener('change', (e) => {
-//     e.preventDefault();
-//     if (noFontBackground.checked) {
-//         imageTopTextContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-//         imageBottomTextContainer.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-//         imageTopTextContainer.style.position = 'absolute';
-//         imageTopTextContainer.style.top = '0';
-//         imageTopTextContainer.style.left = '0';
-//         imageBottomTextContainer.style.position = 'absolute';
-//         imageBottomTextContainer.style.bottom = '0';
-//         imageBottomTextContainer.style.left = '0';
-//         imagePerSe.style.backgroundSize = 'cover';
-//     } else{
-//         imageTopTextContainer.style.backgroundColor = 'white';
-//         imageBottomTextContainer.style.backgroundColor = 'white';
-//         imageTopTextContainer.style.position = 'static';
-//         imageBottomTextContainer.style.position = 'static';
-//         imagePerSe.style.backgroundSize = '38em, 100%';
-
-//     }
+$('#line-height-input').addEventListener('change', () => {
+    $('#top-text').style.lineHeight = $('#line-height-input').value;
+    $('#bottom-text').style.lineHeight = $('#line-height-input').value;
+})
