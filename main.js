@@ -36,7 +36,16 @@ $('#light-theme-button').addEventListener('click', () => {
 //     $('#img-meme').style.backgroundImage = `url${('#url-img-input').target.value}`
 // })  
 
-// TEXT INPUT //
+// IMG URL 
+
+$('#url-img-input').addEventListener('keyup', () => {
+    $('#img-meme').style.backgroundImage = $('url-img-input').value;
+    $('#img-meme').style.backgroundPosition = 'center';
+});
+
+// TEXT TOOLS //
+
+// TEXT INPUT
 
 $('#top-text-input').addEventListener('keyup', () => {
     $('#top-text').innerText = $('#top-text-input').value;
@@ -46,14 +55,7 @@ $('#bottom-text-input').addEventListener('keyup', () => {
     $('#bottom-text').innerText = $('#bottom-text-input').value;
 })
 
-// IMG URL //
-
-$('#url-img-input').addEventListener('keyup', () => {
-    $('#img-meme').style.backgroundImage = $('url-img-input').value;
-    $('#img-meme').style.backgroundPosition = 'center';
-});
-
-// NO TEXT CHECKBOXES //
+// NO TEXT CHECKBOXES 
 
 $('#no-top-text-checkbox').addEventListener('change', () => {
     if ($('#no-top-text-checkbox').checked) {
@@ -131,6 +133,22 @@ $('#no-background-text-checkbox').addEventListener('change', () => {
     $('#bottom-text').style.backgroundColor = $('#text-background-color-input').value.toUpperCase()
 }})
 
+// LETTER STROKE
+
+$('#no-outline-button').addEventListener('click', ()=>{
+   $('#top-text').style.webkitTextStroke  = 'transparent';
+   $('#bottom-text').style.webkitTextStroke = 'transparent';
+});
+
+$('#light-outline-button').addEventListener('click', ()=>{
+    $('#top-text').style.webkitTextStroke  = '1px white';
+    $('#bottom-text').style.webkitTextStroke = '1px white';
+});
+
+$('#dark-outline-button').addEventListener('click', ()=>{
+    $('#top-text').style.webkitTextStroke  = '3px black';
+    $('#bottom-text').style.webkitTextStroke = '3px black';
+});
 
 // LETTER SPACING
 
@@ -145,3 +163,4 @@ $('#line-height-input').addEventListener('change', () => {
     $('#top-text').style.lineHeight = $('#line-height-input').value;
     $('#bottom-text').style.lineHeight = $('#line-height-input').value;
 })
+
