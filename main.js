@@ -30,18 +30,69 @@ $('#light-theme-button').addEventListener('click', () => {
     document.body.classList.remove('dark-theme')
 })
 
-//  IMAGE URL
-
-// $('#url-img-input').addEventListener('keyup', () => {
-//     $('#img-meme').style.backgroundImage = `url${('#url-img-input').target.value}`
-// })  
-
 // IMG URL 
 
-$('#url-img-input').addEventListener('keyup', () => {
-    $('#img-meme').style.backgroundImage = $('url-img-input').value;
-    $('#img-meme').style.backgroundPosition = 'center';
-});
+$('#url-img-input').addEventListener('input', () => {
+    $('#canvas-meme').style.backgroundImage = `url("${$('#url-img-input').value}")`
+    $('#canvas-meme').style.backgroundPosition = 'center';
+})
+
+window.addEventListener('resize', () => {
+    $('#canvas-meme').style.height = `${$('#canvas-meme').getBoundingClientRect().width}px`
+})  
+
+// BACKGROUND BLEND MODE COLOR
+
+$('#blend-mode-color-input').addEventListener('input', () => {
+    $('#blend-mode-color').innerText = $('#blend-mode-color-input').value.toUpperCase();
+    $('#canvas-meme').style.backgroundColor = $('#blend-mode-color-input').value;
+})
+
+// BACKGROUND BLEND MODE SELECT
+
+$('#blend-mode-select').addEventListener('change', () => {
+    $('#canvas-meme').style.backgroundBlendMode = $('#blend-mode-select').value;
+})
+
+// FILTERS
+
+const actualizarFiltros = () => {
+    $('#canvas-meme').style.filter = `${$('#brightness-slider').value}`
+    $('#canvas-meme').style.filter = `${$('#opacity-slider').value}`
+    $('#canvas-meme').style.filter = `${$('#blur-slider').value}px`
+    $('#canvas-meme').style.filter = `${$('#contrast-slider').value}%`
+    $('#canvas-meme').style.filter = `${$('#grayscale-slider').value}%`
+    $('#canvas-meme').style.filter = `${$('#hue-rotate').value}deg`
+    $('#canvas-meme').style.filter = `${$('#sepia-slider').value}%`
+    $('#canvas-meme').style.filter = `${$('#saturate-slider').value}%`
+    $('#canvas-meme').style.filter = `${$('#invert-slider').value}`
+}
+
+const imgFilters = () => {
+    $('#brightness-slider').addEventListener('change', actualizarFiltros)
+    $('#opacity-slider').addEventListener('change', actualizarFiltros)
+    $('#blur-slider').addEventListener('change', actualizarFiltros)
+    $('#contrast-slider').addEventListener('change', actualizarFiltros)
+    $('#grayscale-slider').addEventListener('change', actualizarFiltros)
+    $('#sepia-slider').addEventListener('change', actualizarFiltros)
+    $('#hue-rotate').addEventListener('change', actualizarFiltros)
+    $('#saturate-slider').addEventListener('change', actualizarFiltros)
+    $('#invert-slider').addEventListener('change', actualizarFiltros)
+}
+
+// DEFAULT FILTERS BUTTON 
+
+$('#default-filters-button').addEventListener('click', () => {
+    $('#brightness-slider').value = 1
+    $('#opacity-slider').value = 1
+    $('#blur-slider').value = 0
+    $('#contrast-slider').value = 100
+    $('#grayscale-slider').value = 0
+    $('#sepia-slider').value = 0
+    $('#hue-rotate').value = 0
+    $('#saturation-slider').value = 100
+    $('#invert-slider').value = 0
+})
 
 // TEXT TOOLS //
 
