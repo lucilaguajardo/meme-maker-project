@@ -484,7 +484,6 @@ input[type='checkbox'] {
 input[type="color"] {
 	-webkit-appearance: none;
     border: none;
-    
 }
 
 input[type="color"]::-webkit-color-swatch-wrapper {
@@ -492,7 +491,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 }
 
 input[type='color']::-webkit-color-swatch {
-    max-width: 12px;
+    max-width: 10px;
     max-height: 12px;
     border-radius: 50px;
     border: 0;
@@ -533,5 +532,5 @@ option {
     padding: 17px 20px;
     font-size: 30px;
     font-weight: 800;
-    font-family: Impact;
+    font-family: Courier;
 }

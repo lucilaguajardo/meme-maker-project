@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content=""> 
+    <meta name="author" content="Lucila Guajardo"> 
     <meta name="description" content="Meme Maker Project">
     <meta name="keywords" content="meme, meme maker, funny">
 
@@ -13,14 +13,14 @@
     <meta property="og:description" content="Meme Maker Project">
     <meta property="og:type" content="article">
     <meta property="og:site name" content="Meme Maker">
-    <meta property="og:url" content="">
+    <meta property="og:url" content="https://lucilaguajardo.github.io/meme-maker-project/">
     <meta property="og:image" content="">
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="">
+    <meta property="twitter:url" content="https://lucilaguajardo.github.io/meme-maker-project/">
     <meta property="twitter:title" content="Meme Maker">
     <meta property="twitter:description" content="Meme Maker Project">
     <meta property="twitter:image" content="">
@@ -48,15 +48,15 @@
             <h1>MEME MAKER</h1>
             <div class="header-buttons-container">
                 <button class="header-button" id="img-button" aria-label="Image tools">
-                    <i class="fas fa-image"></i>
+                    <i class="fas fa-image" aria-hidden="true"></i>
                     Image
                 </button>
                 <button class="button-text" id="text-button" aria-label="Text tools">
-                    <i class="fas fa-i-cursor"></i>
+                    <i class="fas fa-i-cursor" aria-hidden="true"></i>
                     Text
                 </button>
                 <button class="header-button hidden" id="dark-theme-button">
-                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
                     Dark mode
                 </button>
                 <button class="header-button" id="light-theme-button">
@@ -68,11 +68,11 @@
         <div class="meme-container" id="meme-container">
             <div class="canvas-meme" id="canvas-meme" style="height: 610px">
                 <p id="top-text" class="text-meme">TOP TEXT</p>
-                <div src(unknown) alt id="img-meme" aria-label="Imagen de meme"></div>
+                <div id="img-meme" aria-label="Meme image"></div>
                 <p id="bottom-text" class="text-meme">BOTTOM TEXT</p>
             </div>
             <button type="button" class="download-button" id="download-meme-button" aria-label="Download button">
-                <i class="fas fa-arrow-down"></i>
+                <i class="fas fa-arrow-down" aria-hidden="true"></i>
                 Download meme
             </button>
         </div>
@@ -130,7 +130,7 @@
                     <input type="range" id="sepia-slider" min="0" max="100" value="0">
                 </div>
                 <div class="panel-control-slider">
-                    <label for="hue-slider" class="label-img">Hue</label>
+                    <label for="hue-rotate" class="label-img">Hue</label>
                     <input type="range" id="hue-rotate" min="0" max="360" value="0">
                 </div>
                 <div class="panel-control-slider">
@@ -138,7 +138,7 @@
                     <input type="range" id="saturation-slider" min="100" max="1000" value="100" step="10">
                 </div>
                 <div class="panel-control-slider">
-                    <label for="invert-slider"class="label-img">Invert</label>
+                    <label for="invert-slider" class="label-img">Invert</label>
                     <input type="range" id="invert-slider" min="0" max="1" value="0" step="0.1">
                 </div>
             </div>
@@ -203,7 +203,7 @@
                 </div>
                 <div class="panel-control-flex-row">
                     <input type="checkbox" id="no-background-text-checkbox">
-                    <label for="text-no-background-checkbox" class="label-text">No background</label>
+                    <label for="no-background-text-checkbox" class="label-text">No background</label>
                 </div>
             </div>
             <div class="panel-control-container">
@@ -238,6 +238,5 @@
     <script src="./main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous"></script>
-
 </body>
 </html>

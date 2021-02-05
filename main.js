@@ -214,4 +214,3 @@ $('#line-height-input').addEventListener('change', () => {
     $('#top-text').style.lineHeight = $('#line-height-input').value;
     $('#bottom-text').style.lineHeight = $('#line-height-input').value;
 })
-
