@@ -30,11 +30,31 @@ $('#light-theme-button').addEventListener('click', () => {
     document.body.classList.remove('dark-theme');
 });
 
+// OPEN/CLOSE BUTTON
+
+$('#open-close-button').addEventListener('click', () => {
+    if ($('#open-close-button').checked) {
+            $('#open-close-button-icon').classList.add('rotate-open');
+            $('#open-close-button-icon').classList.remove('rotate-close');
+            $('#aside-container').classList.add('aside-translate-close');
+            $('#aside-container').classList.remove('aside-translate-open');
+            $('#main-container').classList.add('main-translate-close');
+            $('#main-container').classList.remove('main-translate-open');
+    } else {
+            $('#open-close-button-icon').classList.remove('rotate-open');
+            $('#open-close-button-icon').classList.add('rotate-close');
+            $('#aside-container').classList.remove('aside-translate-close');
+            $('#aside-container').classList.add('aside-translate-open');
+            $('#main-container').classList.remove('main-translate-close');
+            $('#main-container').classList.add('main-translate-open');
+}});
+
 // IMG URL 
 
 $('#url-img-input').addEventListener('input', () => {
     $('#canvas-meme').style.backgroundImage = `url("${$('#url-img-input').value}")`;
     $('#canvas-meme').style.backgroundPosition = 'center';
+    $('#canvas-meme').style.backgroundRepeat = 'no-repeat';
 });
 
 window.addEventListener('resize', () => {
@@ -56,42 +76,49 @@ $('#blend-mode-select').addEventListener('change', () => {
 
 // FILTERS
 
-const actualizarFiltros = () => {
-    $('#canvas-meme').style.filter = `${$('#brightness-slider').value}`
-    $('#canvas-meme').style.filter = `${$('#opacity-slider').value}`
-    $('#canvas-meme').style.filter = `${$('#blur-slider').value}px`
-    $('#canvas-meme').style.filter = `${$('#contrast-slider').value}%`
-    $('#canvas-meme').style.filter = `${$('#grayscale-slider').value}%`
-    $('#canvas-meme').style.filter = `${$('#hue-rotate').value}deg`
-    $('#canvas-meme').style.filter = `${$('#sepia-slider').value}%`
-    $('#canvas-meme').style.filter = `${$('#saturate-slider').value}%`
-    $('#canvas-meme').style.filter = `${$('#invert-slider').value}`
-};
+// const actualizarFiltros = () => {
+//     $('#canvas-meme').style.filter = `${$('#brightness-slider').value}`;
+//     $('#canvas-meme').style.filter = `${$('#opacity-slider').value}`;
+//     $('#canvas-meme').style.filter = `${$('#blur-slider').value}px`;
+//     $('#canvas-meme').style.filter = `${$('#contrast-slider').value}%`;
+//     $('#canvas-meme').style.filter = `${$('#grayscale-slider').value}%`;
+//     $('#canvas-meme').style.filter = `${$('#hue-rotate').value}deg`;
+//     $('#canvas-meme').style.filter = `${$('#sepia-slider').value}%`;
+//     $('#canvas-meme').style.filter = `${$('#saturate-slider').value}%`;
+//     $('#canvas-meme').style.filter = `${$('#invert-slider').value}`;
+// };
 
-const imgFilters = () => {
-    $('#brightness-slider').addEventListener('change', actualizarFiltros)
-    $('#opacity-slider').addEventListener('change', actualizarFiltros)
-    $('#blur-slider').addEventListener('change', actualizarFiltros)
-    $('#contrast-slider').addEventListener('change', actualizarFiltros)
-    $('#grayscale-slider').addEventListener('change', actualizarFiltros)
-    $('#sepia-slider').addEventListener('change', actualizarFiltros)
-    $('#hue-rotate').addEventListener('change', actualizarFiltros)
-    $('#saturate-slider').addEventListener('change', actualizarFiltros)
-    $('#invert-slider').addEventListener('change', actualizarFiltros)
-};
+// const imgFilters = () => {
+//     $('#brightness').addEventListener('change', actualizarFiltros);
+//     $('#opacity').addEventListener('change', actualizarFiltros);
+//     $('#blur').addEventListener('change', actualizarFiltros);
+//     $('#contrast').addEventListener('change', actualizarFiltros);
+//     $('#grayscale-slider').addEventListener('change', actualizarFiltros);
+//     $('#sepia-slider').addEventListener('change', actualizarFiltros);
+//     $('#hue-rotate').addEventListener('change', actualizarFiltros);
+//     $('#saturate-slider').addEventListener('change', actualizarFiltros);
+//     $('#invert-slider').addEventListener('change', actualizarFiltros);
+// };
+// imgFilters();
+
+// $('#canvas-meme').addEventListener('change', () => {
+//     if (){
+
+//     }
+// })
 
 // DEFAULT FILTERS BUTTON 
 
 $('#default-filters-button').addEventListener('click', () => {
-    $('#brightness-slider').value = 1
-    $('#opacity-slider').value = 1
-    $('#blur-slider').value = 0
-    $('#contrast-slider').value = 100
-    $('#grayscale-slider').value = 0
-    $('#sepia-slider').value = 0
-    $('#hue-rotate').value = 0
-    $('#saturation-slider').value = 100
-    $('#invert-slider').value = 0
+    $('#brightness').value = 1
+    $('#opacity').value = 1
+    $('#blur').value = 0
+    $('#contrast').value = 100
+    $('#grayscale').value = 0
+    $('#sepia').value = 0
+    $('#hue').value = 0
+    $('#saturation').value = 100
+    $('#invert').value = 0
 });
 
 // TEXT TOOLS //
@@ -214,22 +241,3 @@ $('#line-height-input').addEventListener('change', () => {
     $('#top-text').style.lineHeight = $('#line-height-input').value;
     $('#bottom-text').style.lineHeight = $('#line-height-input').value;
 });
-
-// OPENING/CLOSING BUTTON
-
-$('#open-close-button').addEventListener('click', () => {
-    if ($('#open-close-button').checked) {
-            $('#open-close-button-icon').classList.add('rotate-open');
-            $('#open-close-button-icon').classList.remove('rotate-close');
-            $('#aside-container').classList.add('aside-translate-close');
-            $('#aside-container').classList.remove('aside-translate-open');
-            $('#main-container').classList.add('main-translate-close');
-            $('#main-container').classList.remove('main-translate-open');
-    } else {
-            $('#open-close-button-icon').classList.remove('rotate-open');
-            $('#open-close-button-icon').classList.add('rotate-close');
-            $('#aside-container').classList.remove('aside-translate-close');
-            $('#aside-container').classList.add('aside-translate-open');
-            $('#main-container').classList.remove('main-translate-close');
-            $('#main-container').classList.add('main-translate-open');
-}});
