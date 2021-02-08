@@ -82,18 +82,19 @@ header {
     background-color: var(--color-header);
     padding: 15px 0 15px;
     box-sizing: none;
+    transition: 1s ease-in-out;
 }
 
 h1 {
     font-weight: 700;
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 10px;
     letter-spacing: 5px;
 }
 
 h2 {
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 15px;
     letter-spacing: 3px;
 }
@@ -116,22 +117,48 @@ textarea {
 .label-img,
 .label-text {
     display: block;
-    font-size: 10px;
+    font-size: 9px;
     color: var(--color-text);
     letter-spacing: 2px;
 }
 
 .label-text {
-    margin-left: 8px;
+    margin-left: 10px;
 }
   
 textarea {
     resize: vertical;
+    font-size: 9px;
+}
+
+/* Option */
+
+option {
+    display: block;
+    white-space: pre;
+    text-transform: uppercase;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+/* Meme text */
+
+.text-meme{
+    width: 100%;
+    height: fit-content;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 17px 20px;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: Courier;
 }
   
 .hidden { 
     display: none !important;
 }
+
 /*
   *********************************** 
                 Layout
@@ -149,7 +176,6 @@ aside {
     flex-direction: column;
     width: 275px;
     height: 100vh;
-    padding: 20px;
 }
 
 section {
@@ -170,6 +196,7 @@ section {
     align-items: center;
     background-color: var(--color-background);
     padding: 15px 0;
+    transition: all 1s ease-in-out;
 }
 
 .canvas-meme {
@@ -188,7 +215,7 @@ section {
 .span-image-color {
     position: absolute;
     left: 52px;
-    top: 25.7%;
+    top: 23.2%;
     transform: translateY(-50%);
     font-size: 10px;
     letter-spacing: 2px;
@@ -197,7 +224,7 @@ section {
 .span-text-color {
     position: absolute;
     left: 52px;
-    top: 59%;
+    top: 55.5%;
     transform: translateY(-50%);
     font-size: 10px;
     letter-spacing: 2px;
@@ -206,7 +233,7 @@ section {
 .span-text-color-background {
     position: absolute;
     left: 175px;
-    top: 59%;
+    top: 55.5%;
     transform: translateY(-50%);
     font-size: 10px;
     letter-spacing: 2px;
@@ -223,7 +250,7 @@ section {
 button { 
     font-family:'Quicksand', sans-serif;
     font-weight: 600;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
     height: 36px;
@@ -232,7 +259,6 @@ button {
     align-items: center;
     padding: 0 20px;
     border-radius: var(--border-radius);
-    transition: background-color 0.2s;
     outline: none;
 }
 
@@ -308,7 +334,7 @@ i {
     height: 25px;
     padding: 0 18px;
     background-color: var(--color-input-default);
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 300;
     letter-spacing: 2px;
 }
@@ -322,11 +348,12 @@ i {
     flex-direction: column;
     justify-content: flex-start;
     background-color: var(--color-panel);
-    padding: 30px 20px 0px 20px;
+    padding: 20px 20px 0px 20px;
     overflow: auto;
     position: fixed;
     top: 0;
     right: 0;
+    transition: 1s ease-in-out;
 }
 
 .panel-control-container {
@@ -338,7 +365,8 @@ i {
 .panel-control-title {
     color: var(--color-title-control);
     width: 100%;
-    font-size: 11px;
+    font-size: 10px;
+    letter-spacing: 2px;
     margin: 0;
 }
 
@@ -347,7 +375,7 @@ i {
 .panel-control-flex-row {
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
+    margin-top: 9px;
 }
 
 .panel-control-column {
@@ -382,11 +410,10 @@ i {
     height: 25px;
     background-color: var(--color-input-default);
     border-radius: var(--border-radius);
-    transition: background-color 0.2s;
-    margin-top: 10px;
+    margin-top: 9px;
     font-family:'Quicksand', sans-serif;
     font-weight: 300;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 2px;
 }
 
@@ -397,7 +424,7 @@ i {
 .panel-control-input::placeholder {
     font-family:'Quicksand', sans-serif;
     font-weight: 300;
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-text);
@@ -431,7 +458,7 @@ select {
 }
   
 .panel-control-slider > input[type='range'] {
-    transition: 0.2s;
+    transition: 0.3s;
 }
   
 .panel-control-slider > input[type='range']:focus {
@@ -456,7 +483,7 @@ input[type='range'] {
     border-radius: 12px;
     appearance: none;
     height: 1px;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 input[type='range']::-webkit-slider-thumb {
@@ -471,12 +498,6 @@ input[type='range']::-webkit-slider-thumb {
 
 input[type='range']:focus::-webkit-slider-thumb {
     border: 10px solid #5a5d68;
-}
-
-/* Input checkbox */
-
-input[type='checkbox'] {
-    margin: 0 5px 0 0;
 }
 
 /* Input color */
@@ -511,26 +532,84 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
-/* Option */
+/* open-close button */
 
-option {
-    display: block;
-    white-space: pre;
-    text-transform: uppercase;
-    min-height: 1.2em;
-    padding: 0px 2px 1px;
+/* checkbox */
+
+.open-close-button {
+    width: 30px;
+    margin-left: -30px;
+    margin-top: 22px;
+    z-index: 999;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-touch-callout: none;
 }
 
-/* Meme text */
+/* icon */
 
-.text-meme{
-    width: 100%;
+.fa-plus {
+    margin-left: -30px;
+    margin-top: 20px;
     height: fit-content;
-    background: white;
-    color: black;
-    text-align: center;
-    padding: 17px 20px;
-    font-size: 30px;
-    font-weight: 800;
-    font-family: Courier;
+    transform: rotateX(-45deg);
+    -webkit-transform: rotate(-45deg);
+    z-index: 1;
+}
+
+.rotate-open {
+    transform: rotateY(0deg);
+    -webkit-transform: rotate(0deg);
+    transition: 1s ease-in-out;
+}
+
+.rotate-close {
+    transform: rotateX(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transition: 1s ease-in-out;
+}
+
+.aside-translate-open {
+    margin-left: -275px !important;
+    transition: 1s ease-in-out;
+}
+
+
+.aside-translate-close {
+    margin-right: -275px !important;
+    transition: 1s ease-in-out;
+}
+
+.main-translate-open {
+    max-width: calc(100% - 275px);
+    transition: 1s ease-in-out;
+}
+
+.main-translate-close {
+    max-width: 100%;
+    transition: 1s ease-in-out;
+}
+
+
+/*
+  *********************************** 
+            Responsiveness
+  ***********************************
+*/
+
+/*** Breakpoint 1 at 800px ***/
+
+@media (max-width: 800px) {
+    #aside-container {
+        display: none;
+    }
+
+    main {
+        max-width: 100%;
+    }
+
+    #open-close-button,
+    #open-close-button-icon {
+        display: none;
+    }
 }

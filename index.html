@@ -39,11 +39,11 @@
     <script src="https://kit.fontawesome.com/e724a02081.js" crossorigin="anonymous"></script>
 
     <!-- Title -->
-    <title>Meme generator</title>
+    <title>Meme maker</title>
     
 </head>
 <body class="dark-theme">
-    <main>
+    <main id="main-container">
         <header>
             <h1>MEME MAKER</h1>
             <div class="header-buttons-container">
@@ -77,6 +77,8 @@
             </button>
         </div>
     </main>
+    <input name="Open/Close" type="checkbox" class="open-close-button" id="open-close-button" aria-label="Open and close button for tools panel">
+    <i class="fas fa-plus" id="open-close-button-icon"></i>
     <aside class="panel-control" id="aside-container">
         <section class="panel-img" id="img-panel-control">
             <h2>Image</h2>
@@ -88,8 +90,10 @@
                 <h3 class="panel-control-title">Background</h3>
                 <div class="panel-control-column">
                     <div class="panel-control-color">
-                        <input aria-label="Background color for the image" type="color" id="blend-mode-color-input" class="panel-control-input" value="#FFFFFF">
-                        <span class="span-image-color" id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                        <div class="panel-control-input-div">
+                            <input aria-label="Background color for the image" type="color" id="blend-mode-color-input" class="panel-control-input" value="#FFFFFF">
+                            <span class="span-image-color" id="blend-mode-color" aria-hidden="true">#FFFFFF</span>
+                        </div>
                     </div>
                     <div class="panel-control-blend-mode">
                         <select aria-label="Blending mode for the image" id="blend-mode-select"  class="panel-control-select">
@@ -152,7 +156,6 @@
                 <div class="panel-control-flex-row">
                     <input type="checkbox" id="no-top-text-checkbox">
                     <label for="no-top-text-checkbox" class="label-text">No top text</label>
-                    <span class="checkmark"></span>
                 </div>
             </div>
             <div class="panel-control-container">
