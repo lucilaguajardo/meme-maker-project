@@ -654,6 +654,8 @@ input[type='range']:focus::-webkit-slider-thumb {
             transform: rotateX(-45deg);
     -webkit-transform: rotate(-45deg);    
 }
+ 
+/* Moving aside and main */
 
 .aside-translate-open {
     margin-left: -275px !important;

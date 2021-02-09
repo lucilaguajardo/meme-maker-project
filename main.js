@@ -49,6 +49,15 @@ $('#open-close-button').addEventListener('click', () => {
             $('#main-container').classList.add('main-translate-open');
 }});
 
+// DOWNLOAD BUTTON
+
+$('#download-meme-button').addEventListener('click', () => {
+        domtoimage.toBlob($('#canvas-meme'))
+        .then(function (blob) {
+            window.saveAs(blob, 'meme.png')
+        });
+});
+
 // IMG URL 
 
 $('#url-img-input').addEventListener('input', () => {
@@ -74,18 +83,79 @@ $('#blend-mode-select').addEventListener('change', () => {
     $('#canvas-meme').style.backgroundBlendMode = $('#blend-mode-select').value;
 });
 
+// FILTERS
+
+$('#canvas-meme').addEventListener('change', () => {
+    $('#canvas-meme').style.filter =
+    `brightness(${$('#brightness-slider').value})
+     opacity(${$('#opacity-slider').value})
+     blur(${$('#blur-slider').value}px)
+     contrast(${$('#contrast-slider').value}%)
+     contrast(${$('#contrast-slider').value}%)
+     grayscale(${$('#grayscale-slider').value}%)
+     hue-rotate(${$('#hue-rotate').value}deg)
+     sepia(${$('#sepia-slider').value}%)
+     saturate(${$('#saturation-slider').value}%)
+     invert(${$('#invert-slider').value})`
+})
+
+
+// const filters = () => {
+//     const brightness = $('#brightness-slider').value
+//     const opacity = $('#opacity-slider').value
+//     const blur = $('#blur-slider').value
+//     const contrast = $('#contrast-slider').value
+//     const grayscale = $('#grayscale-slider').value
+//     const hue = $('#hue-rotate').value
+//     const sepia = $('#sepia-slider').value
+//     const saturation = $('#saturation-slider').value
+//     const invert = $('#invert-slider').value
+  
+//     $('#canvas-meme').style.filter = 
+//     `brightness(${brightness})
+//     opacity(${opacity})
+//     blur(${blur}px)
+//     contrast(${contrast}%)
+//     grayscale(${grayscale}%)
+//     hue${hue}deg)
+//     sepia(${sepia}%)
+//     saturation(${saturation}%)
+//     invert(${invert})`
+// }
+
+// $('#brightness-slider').addEventListener('change', filters)
+
+// $('#opacity-slider').addEventListener('change', filters)
+
+// $('#blur-slider').addEventListener('change', filters)
+
+// $('#contrast-slider').addEventListener('change', filters)
+
+// $('#grayscale-slider').addEventListener('change', filters)
+
+// $('#hue-rotate').addEventListener('change', filters)
+
+// $('#sepia-slider').addEventListener('change', filters)
+
+// $('#saturation-slider').addEventListener('change', filters)
+
+// $('#invert-slider').addEventListener('change', filters)
+
+
+
+
 // DEFAULT FILTERS BUTTON 
 
 $('#default-filters-button').addEventListener('click', () => {
-    $('#brightness').value = 1
-    $('#opacity').value = 1
-    $('#blur').value = 0
-    $('#contrast').value = 100
-    $('#grayscale').value = 0
-    $('#sepia').value = 0
-    $('#hue').value = 0
-    $('#saturation').value = 100
-    $('#invert').value = 0
+    $('#brightness-slider').value = 1
+    $('#opacity-slider').value = 1
+    $('#blur-slider').value = 0
+    $('#contrast-slider').value = 100
+    $('#grayscale-slider').value = 0
+    $('#sepia-slider').value = 0
+    $('#hue-rotate').value = 0
+    $('#saturation-slider').value = 100
+    $('#invert-slider').value = 0
 });
 
 // TEXT TOOLS //
