@@ -20,8 +20,7 @@
     --color-input-default: #e2dddd;
     --color-input-default-hover: #d8d6d6;
 
-    --color-slider-default: #dadada;
-    --color-slider-default-focus: #d4d3d3;
+    --color-slider-default-focus: #d1d1d1;
   
     --color-text: #424242;
     
@@ -49,8 +48,7 @@
     --color-input-default: #343842;
     --color-input-default-hover: #474d5c;
     
-    /* --color-slider-default: #343842;
-    --color-slider-default-hover: #4b4f5a; */
+    --color-slider-default-focus: #474d5c;
 
     --color-text: #aaaaaa;
 
@@ -593,7 +591,7 @@ input[type='range'] {
 
 input[type='range']:focus {
     height: 2px;
-    background-color: var(--color-input-default-hover);
+    background-color: var(--color-slider-default-focus);
     transition: 0.6s ease-in-out;
 }
 
@@ -608,8 +606,8 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 input[type='range']:focus::-webkit-slider-thumb {
-    border: 2px solid var(--color-input-default-hover);
-    background: var(--color-input-default-hover);
+    border: 2px solid var(--color-slider-default-focus);
+    background: var(--color-slider-default-focus);
 }
 
 /* open-close button */
