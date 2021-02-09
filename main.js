@@ -74,39 +74,6 @@ $('#blend-mode-select').addEventListener('change', () => {
     $('#canvas-meme').style.backgroundBlendMode = $('#blend-mode-select').value;
 });
 
-// FILTERS
-
-// const actualizarFiltros = () => {
-//     $('#canvas-meme').style.filter = `${$('#brightness-slider').value}`;
-//     $('#canvas-meme').style.filter = `${$('#opacity-slider').value}`;
-//     $('#canvas-meme').style.filter = `${$('#blur-slider').value}px`;
-//     $('#canvas-meme').style.filter = `${$('#contrast-slider').value}%`;
-//     $('#canvas-meme').style.filter = `${$('#grayscale-slider').value}%`;
-//     $('#canvas-meme').style.filter = `${$('#hue-rotate').value}deg`;
-//     $('#canvas-meme').style.filter = `${$('#sepia-slider').value}%`;
-//     $('#canvas-meme').style.filter = `${$('#saturate-slider').value}%`;
-//     $('#canvas-meme').style.filter = `${$('#invert-slider').value}`;
-// };
-
-// const imgFilters = () => {
-//     $('#brightness').addEventListener('change', actualizarFiltros);
-//     $('#opacity').addEventListener('change', actualizarFiltros);
-//     $('#blur').addEventListener('change', actualizarFiltros);
-//     $('#contrast').addEventListener('change', actualizarFiltros);
-//     $('#grayscale-slider').addEventListener('change', actualizarFiltros);
-//     $('#sepia-slider').addEventListener('change', actualizarFiltros);
-//     $('#hue-rotate').addEventListener('change', actualizarFiltros);
-//     $('#saturate-slider').addEventListener('change', actualizarFiltros);
-//     $('#invert-slider').addEventListener('change', actualizarFiltros);
-// };
-// imgFilters();
-
-// $('#canvas-meme').addEventListener('change', () => {
-//     if (){
-
-//     }
-// })
-
 // DEFAULT FILTERS BUTTON 
 
 $('#default-filters-button').addEventListener('click', () => {
