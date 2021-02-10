@@ -18,11 +18,11 @@ Este es el segundo proyecto del **Curso de Desarrollo Front-End de AdaITW** y pe
 
 Vista previa de modo oscuro
 
-![Image](./img/preview-dark-mode)
+![Image](./img/preview-dark-mode.png)
 
 Vista previa de modo claro
 
-![Image](./img/preview-light-mode)
+![Image](./img/preview-light-mode.png)
 
 ### Tecnologías
 
