@@ -1,4 +1,4 @@
-# Proyecto Editor de memes - (ES)
+# Proyecto - Generador de memes - (ES)
 
 ## Podés verlo haciendo click [acá.](https://lucilaguajardo.github.io/meme-maker-project/)
 
@@ -36,7 +36,7 @@ A [Jonh](https://github.com/Jonhks) y [Leydy](https://github.com/leydyk93)
 
 ---
 
-# Personal Portfolio Project - (EN)
+# Meme Maker Project - (EN)
 
 ## You can check it out by clicking [here.](https://lucilaguajardo.github.io/meme-maker-project/)
 
