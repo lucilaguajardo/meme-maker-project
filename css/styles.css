@@ -29,7 +29,7 @@
 
     --border-radius: 3px;
 
-    --font-weight-default: 400;
+    --font-weight-default: 500;
 }
 
 /* Dark theme */
@@ -59,7 +59,7 @@
 
 /*
   *********************************** 
-                Reset
+             Layout
   ***********************************
 */
 
@@ -84,6 +84,9 @@ body {
 main {
     height: 100vh;
     max-width: calc(100% - 275px);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 header {
@@ -93,94 +96,6 @@ header {
     padding: 15px 0 15px;
     box-sizing: none;
     transition: 1s ease-in-out;
-}
-
-h1 {
-    font-weight: 700;
-    font-size: 28px;
-    margin-bottom: 10px;
-    letter-spacing: 5px;
-}
-
-h2 {
-    text-align: center;
-    font-size: 13px;
-    margin-bottom: 15px;
-    letter-spacing: 3px;
-}
-
-p {
-    margin: 0;
-}  
-
-input,
-button,
-select,
-textarea {
-    border: 0;
-    color: var(--color-text);
-    background-color: transparent;
-    display: block;
-    outline: 0;
-    font-weight: var(--font-weight-default);
-}
-
-.label-img,
-.label-text {
-    display: block;
-    font-size: 9px;
-    font-weight: var(--font-weight-default);
-    color: var(--color-text);
-    letter-spacing: 2px;
-}
-
-.label-text {
-    margin-left: 10px;
-}
-  
-textarea {
-    resize: vertical;
-    font-size: 9px;
-} 
-
-/* Option */
-
-option {
-    display: block;
-    white-space: pre;
-    text-transform: uppercase;
-    min-height: 1.2em;
-    padding: 0px 2px 1px;
-}
-
-/* Meme text */
-
-.text-meme{
-    width: 100%;
-    height: fit-content;
-    background: white;
-    color: black;
-    text-align: center;
-    padding: 17px 20px;
-    font-size: 30px;
-    font-weight: 800;
-    font-family: Courier;
-}
-  
-.hidden { 
-    display: none !important;
-}
-
-/*
-  *********************************** 
-                Layout
-  ***********************************
-*/
-
-main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 }
 
 aside {
@@ -201,7 +116,7 @@ section {
 }
   
 .meme-container {
-    height: calc(100vh - 18vh);
+    height: calc(100vh - 275px);
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -211,15 +126,69 @@ section {
     transition: 1s ease-in-out;
 }
 
-.canvas-meme {
-    width: 100%;
+.canvas-meme,
+.img-meme {
+    width:100%;
+    height: 100%;
     max-width: 450px;
     max-height: 450px;
-    background-color: black;
-    position: relative;
     display: flex;
+
+}
+.canvas-meme {
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.img-meme {
+    background-color: black;
+}
+
+/* Text */
+
+h1 {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 10px;
+    letter-spacing: 5px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+p {
+    margin: 0;
+}  
+
+.label-img,
+.label-text {
+    display: block;
+    font-size: 9px;
+    font-weight: var(--font-weight-default);
+    color: var(--color-text);
+    letter-spacing: 2px;
+}
+
+.label-text {
+    margin-left: 10px;
+}
+  
+textarea {
+    resize: vertical;
+    font-size: 9px;
+} 
+
+option {
+    display: block;
+    white-space: pre;
+    text-transform: uppercase;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
 }
 
 /* Color picker spans */
@@ -233,7 +202,7 @@ span {
 .span-image-color {
     position: absolute;
     left: 52px;
-    top: 23.9%;
+    top: 157px;
     transform: translateY(-50%);
     font-size: 10px;
     letter-spacing: 2px;
@@ -242,7 +211,7 @@ span {
 .span-text-color {
     position: absolute;
     left: 52px;
-    top: 56.3%;
+    top: 370px;
     transform: translateY(-50%);
     font-size: 10px;
     letter-spacing: 2px;
@@ -251,10 +220,44 @@ span {
 .span-text-color-background {
     position: absolute;
     left: 175px;
-    top: 56.3%;
+    top: 370px;
     transform: translateY(-50%);
     font-size: 10px;
     letter-spacing: 2px;
+}
+
+/* Elements */
+
+input,
+button,
+select,
+textarea {
+    border: 0;
+    color: var(--color-text);
+    background-color: transparent;
+    display: block;
+    outline: 0;
+    font-weight: var(--font-weight-default);
+}
+
+/* Meme text */
+
+.text-meme{
+    width: 100%;
+    height: fit-content;
+    background: white;
+    color: black;
+    text-align: center;
+    padding: 17px 20px;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: Courier;
+}
+  
+/* Hidden */
+
+.hidden { 
+    display: none !important;
 }
  
 /*
@@ -285,7 +288,19 @@ button:focus {
     background-color: var(--color-boton-default-hover);
 }
 
-/* Header buttons */
+/* Button download */
+
+.button-download-meme {
+    margin-top: 20px;
+    background-color: var( --color-download-button);
+}
+
+.button-download-meme:hover,
+.button-download-meme:focus {
+    background-color: var( --color-download-button-hover);
+}
+
+/* Buttons header */
 
 .button-container {
     display: flex;
@@ -307,19 +322,85 @@ i {
     margin-right: 3px;
 }
 
-/* Download button */
 
-.download-button {
-    margin-top: 20px;
-    background-color: var( --color-download-button);
+/* Button open-close */
+
+/* checkbox */
+
+.open-close-button {
+    width: 30px;
+    margin-left: -30px;
+    margin-top: 27px;
+    z-index: 999;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-touch-callout: none;
 }
 
-.download-button:hover,
-.download-button:focus {
-    background-color: var( --color-download-button-hover);
+/* icon */
+
+.fa-plus {
+    margin-left: -30px;
+    margin-top: 25px;
+    height: fit-content;
+    z-index: 1;
+            transform: rotatex(-45deg);
+    -webkit-transform: rotate(-45deg);       
 }
 
-/* Text align button */
+.rotate-open,
+.rotate-close,
+.aside-translate-open,
+.aside-translate-close,
+.main-translate-open,
+.main-translate-close {
+    transition: 1s ease-in-out;
+}
+
+.rotate-open {
+            transform: rotateY(0deg);
+    -webkit-transform: rotate(0deg);
+            
+}
+
+.rotate-close {
+            transform: rotateX(-45deg);
+    -webkit-transform: rotate(-45deg);    
+}
+ 
+/* moving aside and main */
+
+.aside-translate-open {
+    margin-left: -275px !important;
+}
+
+
+.aside-translate-close {
+    margin-right: -275px !important;
+}
+
+.main-translate-open {
+    max-width: calc(100% - 275px);
+}
+
+.main-translate-close {
+    max-width: 100%;
+}
+
+/* Button reset */
+
+.button-reset {
+    display: flex;
+    align-self: center;
+    background-color: var(--color-input-default);
+}
+
+.button-reset:focus,
+.button-reset:hover {
+    background-color: var(--color-input-default-hover);
+}
+
+/* Button text align */
 
 .button-text-align {
     height: 25px;
@@ -333,20 +414,7 @@ i {
     background-color: var(--color-input-default-hover);
 }
 
-/* Reset button */
-
-.button-reset {
-    display: flex;
-    align-self: center;
-    background-color: var(--color-input-default);
-}
-
-.button-reset:focus,
-.button-reset:hover {
-    background-color: var(--color-input-default-hover);
-}
-
-/* Text stroke button */
+/* Button text stroke */
 
 .button-text-stroke {
     height: 25px;
@@ -608,70 +676,6 @@ input[type='range']::-webkit-slider-thumb {
 input[type='range']:focus::-webkit-slider-thumb {
     border: 2px solid var(--color-slider-default-focus);
     background: var(--color-slider-default-focus);
-}
-
-/* open-close button */
-
-/* checkbox */
-
-.open-close-button {
-    width: 30px;
-    margin-left: -30px;
-    margin-top: 27px;
-    z-index: 999;
-    opacity: 0;
-    cursor: pointer;
-    -webkit-touch-callout: none;
-}
-
-/* icon */
-
-.fa-plus {
-    margin-left: -30px;
-    margin-top: 25px;
-    height: fit-content;
-    z-index: 1;
-            transform: rotatex(-45deg);
-    -webkit-transform: rotate(-45deg);       
-}
-
-.rotate-open,
-.rotate-close,
-.aside-translate-open,
-.aside-translate-close,
-.main-translate-open,
-.main-translate-close {
-    transition: 1s ease-in-out;
-}
-
-.rotate-open {
-            transform: rotateY(0deg);
-    -webkit-transform: rotate(0deg);
-            
-}
-
-.rotate-close {
-            transform: rotateX(-45deg);
-    -webkit-transform: rotate(-45deg);    
-}
- 
-/* Moving aside and main */
-
-.aside-translate-open {
-    margin-left: -275px !important;
-}
-
-
-.aside-translate-close {
-    margin-right: -275px !important;
-}
-
-.main-translate-open {
-    max-width: calc(100% - 275px);
-}
-
-.main-translate-close {
-    max-width: 100%;
 }
 
 /*

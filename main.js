@@ -51,7 +51,7 @@ $('#open-close-button').addEventListener('click', () => {
 
 // DOWNLOAD BUTTON
 
-$('#download-meme-button').addEventListener('click', () => {
+$('#button-download-meme').addEventListener('click', () => {
         domtoimage.toBlob($('#canvas-meme'))
         .then(function (blob) {
             window.saveAs(blob, 'meme.png')
@@ -61,9 +61,9 @@ $('#download-meme-button').addEventListener('click', () => {
 // IMG URL 
 
 $('#url-img-input').addEventListener('input', () => {
-    $('#canvas-meme').style.backgroundImage = `url("${$('#url-img-input').value}")`;
-    $('#canvas-meme').style.backgroundPosition = 'center';
-    $('#canvas-meme').style.backgroundRepeat = 'no-repeat';
+    $('#img-meme').style.backgroundImage = `url("${$('#url-img-input').value}")`;
+    $('#img-meme').style.backgroundPosition = 'center';
+    $('#img-meme').style.backgroundRepeat = 'no-repeat';
 });
 
 window.addEventListener('resize', () => {
@@ -74,77 +74,44 @@ window.addEventListener('resize', () => {
 
 $('#blend-mode-color-input').addEventListener('input', () => {
     $('#blend-mode-color').innerText = $('#blend-mode-color-input').value.toUpperCase();
-    $('#canvas-meme').style.backgroundColor = $('#blend-mode-color-input').value;
+    $('#img-meme').style.backgroundColor = $('#blend-mode-color-input').value;
 });
 
 // BACKGROUND BLEND MODE SELECT
 
 $('#blend-mode-select').addEventListener('change', () => {
-    $('#canvas-meme').style.backgroundBlendMode = $('#blend-mode-select').value;
+    $('#img-meme').style.backgroundBlendMode = $('#blend-mode-select').value;
 });
 
 // FILTERS
 
-$('#canvas-meme').addEventListener('change', () => {
-    $('#canvas-meme').style.filter =
-    `brightness(${$('#brightness-slider').value})
-     opacity(${$('#opacity-slider').value})
-     blur(${$('#blur-slider').value}px)
-     contrast(${$('#contrast-slider').value}%)
-     contrast(${$('#contrast-slider').value}%)
-     grayscale(${$('#grayscale-slider').value}%)
-     hue-rotate(${$('#hue-rotate').value}deg)
-     sepia(${$('#sepia-slider').value}%)
-     saturate(${$('#saturation-slider').value}%)
-     invert(${$('#invert-slider').value})`
-})
+// $('#img-meme').addEventListener('change', () => {
+//     $('#img-meme').style.filter =
+//     `brightness(${$('#brightness-slider').value})
+//      opacity(${$('#opacity-slider').value})
+//      blur(${$('#blur-slider').value}px)
+//      contrast(${$('#contrast-slider').value}%)
+//      contrast(${$('#contrast-slider').value}%)
+//      grayscale(${$('#grayscale-slider').value}%)
+//      hue-rotate(${$('#hue-rotate').value}deg)
+//      sepia(${$('#sepia-slider').value}%)
+//      saturate(${$('#saturation-slider').value}%)
+//      invert(${$('#invert-slider').value})`
+// })
 
+$('img-meme').style.filter = `brightness(${brightness}) opacity(${opacity}) blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%) hue-rotate(${hue}deg) sepia(${sepia}%) saturate(${saturate}%) invert(${invert})`
 
-// const filters = () => {
-//     const brightness = $('#brightness-slider').value
-//     const opacity = $('#opacity-slider').value
-//     const blur = $('#blur-slider').value
-//     const contrast = $('#contrast-slider').value
-//     const grayscale = $('#grayscale-slider').value
-//     const hue = $('#hue-rotate').value
-//     const sepia = $('#sepia-slider').value
-//     const saturation = $('#saturation-slider').value
-//     const invert = $('#invert-slider').value
-  
-//     $('#canvas-meme').style.filter = 
-//     `brightness(${brightness})
-//     opacity(${opacity})
-//     blur(${blur}px)
-//     contrast(${contrast}%)
-//     grayscale(${grayscale}%)
-//     hue${hue}deg)
-//     sepia(${sepia}%)
-//     saturation(${saturation}%)
-//     invert(${invert})`
-// }
+$('#brightness-slider').addEventListener('change', actualizarFiltros)
+$('#opacity-slider').addEventListener('change', actualizarFiltros)
+$('#blur-slider').addEventListener('change', actualizarFiltros)
+$('#contrast-slider').addEventListener('change', actualizarFiltros)
+$('#grayscale-slider').addEventListener('change', actualizarFiltros)
+$('#hue-rotate').addEventListener('change', actualizarFiltros)
+$('#sepia-slider').addEventListener('change', actualizarFiltros)
+$('#saturation-slider').addEventListener('change', actualizarFiltros)
+$('#invert-slider').addEventListener('change', actualizarFiltros)
 
-// $('#brightness-slider').addEventListener('change', filters)
-
-// $('#opacity-slider').addEventListener('change', filters)
-
-// $('#blur-slider').addEventListener('change', filters)
-
-// $('#contrast-slider').addEventListener('change', filters)
-
-// $('#grayscale-slider').addEventListener('change', filters)
-
-// $('#hue-rotate').addEventListener('change', filters)
-
-// $('#sepia-slider').addEventListener('change', filters)
-
-// $('#saturation-slider').addEventListener('change', filters)
-
-// $('#invert-slider').addEventListener('change', filters)
-
-
-
-
-// DEFAULT FILTERS BUTTON 
+// DEFAULT FILTERS BUTTON
 
 $('#default-filters-button').addEventListener('click', () => {
     $('#brightness-slider').value = 1
