@@ -16,6 +16,13 @@ Este es el segundo proyecto del **Curso de Desarrollo Front-End de AdaITW** y pe
 
 ### Avances
 
+Vista previa de modo oscuro
+
+![Image](./img/preview-dark-mode)
+
+Vista previa de modo claro
+
+![Image](./img/preview-light-mode)
 
 ### Tecnologías
 
