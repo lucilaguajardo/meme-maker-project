@@ -16,11 +16,9 @@ Este es el segundo proyecto del **Curso de Desarrollo Front-End de AdaITW** y pe
 
 ### Avances
 
-Vista previa de modo oscuro
+**Vista previa de modo oscuro y modo claro**
 
 ![Image](./img/preview-dark-mode.png)
-
-Vista previa de modo claro
 
 ![Image](./img/preview-light-mode.png)
 
@@ -36,7 +34,7 @@ Este proyecto no requiere instalación de ninguna dependencia por el momento.
 
 ### Agradecimientos
 
-* A [Jonh](https://github.com/Jonhks) y [Leydy](https://github.com/leydyk93)
+A [Jonh](https://github.com/Jonhks) y [Leydy](https://github.com/leydyk93)
 
 ---
 
@@ -67,4 +65,4 @@ This project does not require installation of any dependencies at the moment.
 
 ### Thanks
 
-* To [Jonh](https://github.com/Jonhks) and [Leydy](https://github.com/leydyk93)
+To [Jonh](https://github.com/Jonhks) and [Leydy](https://github.com/leydyk93)
