@@ -86,7 +86,7 @@ $('#blend-mode-select').addEventListener('change', () => {
 // FILTERS
 
 $('#brightness-slider').addEventListener('change', () => {
-$('#img-meme').style.filter = `brightness(${$('#brightness-slider').value})`
+    $('#img-meme').style.filter = `brightness(${$('#brightness-slider').value})`
 })
 
 $('#opacity-slider').addEventListener('change', () => {
