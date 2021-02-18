@@ -12,7 +12,7 @@
 
 ### Descripción
 
-Este es el segundo proyecto del **Curso de Desarrollo Front-End de AdaITW** y pertenece al *Módulo 2: JavaScript*. Se trata de una aplicación pensada para crear memes divertidos, que brinde herramientas para editar y combinar textos e imágenes de forma dinámica.
+Este es el segundo proyecto del **Curso de Desarrollo Front-End de AdaITW** y pertenece al *Módulo 2: JavaScript*. Se trata de una aplicación pensada para crear memes divertidos, que brinda herramientas para editar y combinar textos e imágenes de forma dinámica.
 
 ### Avances
 
@@ -51,7 +51,7 @@ A [Jonh](https://github.com/Jonhks) y [Leydy](https://github.com/leydyk93)
 
 ### Description
 
-This is the second project from **AdaITW's Front-End Development Course** and it belongs to *Module 2: JavaScript*. It's about an app created to make funny memes, which had to provide tools to edit and combine texts and images dynamically.
+This is the second project from **AdaITW's Front-End Development Course** and it belongs to *Module 2: JavaScript*. It's about an app created to make funny memes, which provides tools to edit and combine texts and images dynamically.
 
 ### Technologies
 
