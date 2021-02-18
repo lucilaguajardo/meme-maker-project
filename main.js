@@ -6,12 +6,22 @@ $('#img-button').addEventListener('click', () => {
     $('#aside-container').style.display = 'flex';
     $('#img-panel-control').classList.remove('hidden');
     $('#text-panel-control').classList.add('hidden');
+
+    $('#aside-container').classList.remove('aside-translate-close');
+    $('#aside-container').classList.add('aside-translate-open');
+    $('#main-container').classList.remove('main-translate-close');
+    $('#main-container').classList.add('main-translate-open');
 });
 
 $('#text-button').addEventListener('click', () => {
     $('#aside-container').style.display = 'flex';
     $('#text-panel-control').classList.remove('hidden');
     $('#img-panel-control').classList.add('hidden');
+
+    $('#aside-container').classList.remove('aside-translate-close');
+    $('#aside-container').classList.add('aside-translate-open');
+    $('#main-container').classList.remove('main-translate-close');
+    $('#main-container').classList.add('main-translate-open');
 });
 
 // THEMES //
